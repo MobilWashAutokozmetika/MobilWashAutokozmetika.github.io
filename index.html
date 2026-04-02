@@ -38,6 +38,10 @@
             background: linear-gradient(to bottom, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.9));
             z-index: 1;
         }
+        /* Gördítősáv stílus a felugró ablakhoz */
+        .modal-scroll::-webkit-scrollbar { width: 8px; }
+        .modal-scroll::-webkit-scrollbar-track { background: #1f2937; border-radius: 4px; }
+        .modal-scroll::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 4px; }
     </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
@@ -129,43 +133,40 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64">
-                <img src="kep11.jpg" onerror="this.onerror=null; this.src='kep11.png';" onclick="openModal(this.src)" alt="Mobil Wash Autókozmetika munkája" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-            </div>
-            
-            <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64">
-                <img src="kep2.jpg" onerror="this.onerror=null; this.src='kep2.png';" onclick="openModal(this.src)" alt="Fényszóró felújítás szürke autón" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                <img src="kep11.jpg" onerror="this.onerror=null; this.src='kep11.png';" onclick="openImageModal(this.src)" alt="Mobil Wash Autókozmetika munkája" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
             </div>
             <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64">
-                <img src="kep3.jpg" onerror="this.onerror=null; this.src='kep3.png';" onclick="openModal(this.src)" alt="Bőrülés tisztítás és ápolás" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                <img src="kep2.jpg" onerror="this.onerror=null; this.src='kep2.png';" onclick="openImageModal(this.src)" alt="Fényszóró felújítás szürke autón" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+            </div>
+            <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64">
+                <img src="kep3.jpg" onerror="this.onerror=null; this.src='kep3.png';" onclick="openImageModal(this.src)" alt="Bőrülés tisztítás és ápolás" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
             </div>
             <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64">
                 <img src="kep4.jpg" onerror="this.onerror=null; this.src='kep4.png';" alt="Bőr és szövet hátsó ülések tisztítása" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
             </div>
             <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64">
-                <img src="kep5.jpg" onerror="this.onerror=null; this.src='kep5.png';" onclick="openModal(this.src)" alt="Mercedes G osztály prémium belső kozmetika" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                <img src="kep5.jpg" onerror="this.onerror=null; this.src='kep5.png';" onclick="openImageModal(this.src)" alt="Mercedes G osztály prémium belső kozmetika" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
             </div>
             <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64">
-                <img src="kep6.jpg" onerror="this.onerror=null; this.src='kep6.png';" onclick="openModal(this.src)" alt="Audi kárpittisztítás és kutyaszőr eltávolítás" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                <img src="kep6.jpg" onerror="this.onerror=null; this.src='kep6.png';" onclick="openImageModal(this.src)" alt="Audi kárpittisztítás és kutyaszőr eltávolítás" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
             </div>
             <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64">
-                <img src="kep7.jpg" onerror="this.onerror=null; this.src='kep7.png';" onclick="openModal(this.src)" alt="Szövet autóülés mélytisztítása" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                <img src="kep7.jpg" onerror="this.onerror=null; this.src='kep7.png';" onclick="openImageModal(this.src)" alt="Szövet autóülés mélytisztítása" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
             </div>
             <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64">
-                <img src="kep8.jpg" onerror="this.onerror=null; this.src='kep8.png';" onclick="openModal(this.src)" alt="Kia bogároldás és teljes külső mosás" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                <img src="kep8.jpg" onerror="this.onerror=null; this.src='kep8.png';" onclick="openImageModal(this.src)" alt="Kia bogároldás és teljes külső mosás" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
             </div>
             <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64">
-                <img src="kep9.jpg" onerror="this.onerror=null; this.src='kep9.png';" onclick="openModal(this.src)" alt="Bemattult fényszóró felújítása kék autón" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                <img src="kep9.jpg" onerror="this.onerror=null; this.src='kep9.png';" onclick="openImageModal(this.src)" alt="Bemattult fényszóró felújítása kék autón" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
             </div>
             <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64">
-                <img src="kep10.jpg" onerror="this.onerror=null; this.src='kep10.png';" onclick="openModal(this.src)" alt="Peugeot prémium belső tisztítás elöl" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                <img src="kep10.jpg" onerror="this.onerror=null; this.src='kep10.png';" onclick="openImageModal(this.src)" alt="Peugeot prémium belső tisztítás elöl" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
             </div>
-            
             <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64">
-                <img src="kep1.jpg" onerror="this.onerror=null; this.src='kep1.png';" onclick="openModal(this.src)" alt="Peugeot prémium külső mosás szemből" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                <img src="kep1.jpg" onerror="this.onerror=null; this.src='kep1.png';" onclick="openImageModal(this.src)" alt="Peugeot prémium külső mosás szemből" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
             </div>
-            
             <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64">
-                <img src="kep12.jpg" onerror="this.onerror=null; this.src='kep12.png';" onclick="openModal(this.src)" alt="Mobil Wash Autókozmetika munkája" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                <img src="kep12.jpg" onerror="this.onerror=null; this.src='kep12.png';" onclick="openImageModal(this.src)" alt="Mobil Wash Autókozmetika munkája" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
             </div>
         </div>
     </section>
@@ -256,7 +257,6 @@
                 <div class="bg-blue-600 py-4 text-center">
                     <h3 class="text-2xl font-bold text-white"><i class="fas fa-star mr-2"></i> Extrák & Fényszóró Felújítás</h3>
                 </div>
-                
                 <div class="p-6 md:p-8 grid md:grid-cols-2 gap-10">
                     <div class="border-b md:border-b-0 md:border-r border-gray-700 pb-8 md:pb-0 md:pr-8">
                         <h4 class="text-2xl font-semibold text-blue-400 mb-4">Fényszóró Felújítás</h4>
@@ -268,7 +268,6 @@
                             <span class="text-xl font-bold text-white">7 000 Ft / db</span>
                         </div>
                     </div>
-
                     <div class="md:pl-2">
                         <h4 class="text-2xl font-semibold text-blue-400 mb-6">Extra Szolgáltatások</h4>
                         <ul class="space-y-4">
@@ -291,7 +290,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="bg-gray-900/60 py-6 text-center border-t border-gray-700">
                     <p class="text-gray-300 mb-3 text-lg font-medium">Megtaláltad a neked megfelelő csomagot?</p>
                     <a href="tel:+36202295966" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold text-lg py-3 px-10 rounded-full transition duration-300 shadow-[0_0_15px_rgba(59,130,246,0.5)] transform hover:scale-105">
@@ -299,7 +297,6 @@
                     </a>
                 </div>
             </div>
-
         </div>
         <p class="text-center text-gray-400 mt-10 text-sm">Az árak tájékoztató jellegűek, a pontos összeg a gépjármű szennyezettségétől függően változhat.</p>
     </section>
@@ -313,23 +310,116 @@
                 <i class="fab fa-tiktok"></i>
             </a>
         </div>
-        <p class="mb-2 text-lg font-semibold text-gray-300">Mobil Wash Autókozmetika</p>
-        <p class="text-sm">© 2024 Minden jog fenntartva.</p>
+        <p class="mb-4 text-lg font-semibold text-gray-300">Mobil Wash Autókozmetika</p>
+        
+        <div class="flex flex-wrap justify-center items-center gap-4 mb-6 text-sm font-medium">
+            <button onclick="openTextModal('Impresszum', 'content-impresszum')" class="hover:text-blue-400 transition duration-300 focus:outline-none">Impresszum</button>
+            <span class="text-gray-700 hidden sm:inline">|</span>
+            <button onclick="openTextModal('Általános Szerződési Feltételek', 'content-aszf')" class="hover:text-blue-400 transition duration-300 focus:outline-none">ÁSZF</button>
+            <span class="text-gray-700 hidden sm:inline">|</span>
+            <button onclick="openTextModal('Adatkezelési Tájékoztató', 'content-adatkezeles')" class="hover:text-blue-400 transition duration-300 focus:outline-none">Adatkezelés</button>
+        </div>
+
+        <p class="text-sm text-gray-600">© 2024 Minden jog fenntartva.</p>
     </footer>
 
-    <div id="imageModal" class="fixed inset-0 z-[60] hidden bg-black/95 flex items-center justify-center p-4 transition-opacity" onclick="closeModal()">
+    <div id="content-impresszum" class="hidden">
+        <h3 class="text-xl font-bold text-white mb-2">A Szolgáltató adatai:</h3>
+        <p><strong>Név:</strong> Gáspár Marcell e.v.</p>
+        <p><strong>Székhely:</strong> Magyarország, 9761 Táplánszentkereszt, Fő út 46.</p>
+        <p><strong>Adószám:</strong> 91806279-1-38</p>
+        <p><strong>Nyilvántartási szám:</strong> 61941810</p>
+        <p><strong>Telefonszám:</strong> +36 20 229 5966</p>
+        <p><strong>E-mail:</strong> mobilwashautokozmetika@gmail.com</p>
+        
+        <h3 class="text-xl font-bold text-white mt-6 mb-2">Tárhelyszolgáltató adatai:</h3>
+        <p><strong>Név:</strong> GitHub, Inc.</p>
+        <p><strong>Cím:</strong> 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA</p>
+        <p><strong>Weboldal:</strong> github.com</p>
+    </div>
+
+    <div id="content-aszf" class="hidden">
+        <p class="mb-4">Jelen Általános Szerződési Feltételek (a továbbiakban: ÁSZF) tartalmazzák Gáspár Marcell e.v. (továbbiakban: Szolgáltató) által üzemeltetett Mobil Wash Autókozmetika szolgáltatásainak igénybevételére vonatkozó feltételeket.</p>
+        
+        <h3 class="text-lg font-bold text-blue-400 mt-6 mb-2">1. A Szolgáltatás tárgya</h3>
+        <p class="mb-4">A Szolgáltató mobil és telephelyi autókozmetikai szolgáltatásokat (külső/belső tisztítás, fényszóró felújítás) nyújt a Megrendelő által megadott helyszínen vagy a Szolgáltató telephelyén. A szolgáltatás megrendelése ráutaló magatartással, szóbeli (telefonos) vagy írásbeli (e-mail, üzenet) megegyezéssel jön létre.</p>
+
+        <h3 class="text-lg font-bold text-blue-400 mt-6 mb-2">2. Árak és Fizetési feltételek</h3>
+        <p class="mb-4">A weboldalon feltüntetett árak tájékoztató jellegűek. A végső ár a gépjármű méretétől és szennyezettségi fokától függően változhat, melyet a Szolgáltató a munka megkezdése előtt egyeztet a Megrendelővel. A szolgáltatás díjának kiegyenlítése a munka elvégzése után, a helyszínen készpénzben vagy azonnali banki átutalással történik.</p>
+
+        <h3 class="text-lg font-bold text-blue-400 mt-6 mb-2">3. Lemondási feltételek</h3>
+        <p class="mb-4">A lefoglalt időpont lemondása vagy módosítása díjmentesen megtehető a megbeszélt időpont előtt legalább 24 órával. 24 órán belüli lemondás esetén a Szolgáltató fenntartja a jogot a következő foglalás elutasítására vagy felár felszámolására.</p>
+
+        <h3 class="text-lg font-bold text-blue-400 mt-6 mb-2">4. Felelősségvállalás</h3>
+        <ul class="list-disc pl-5 mb-4 space-y-2">
+            <li>A Szolgáltató a munkáját a legnagyobb gondossággal és szakszerűséggel végzi.</li>
+            <li><strong>A gépjárműben hagyott személyes tárgyakért és értéktárgyakért a Szolgáltató semmilyen felelősséget nem vállal.</strong> Kérjük, a tisztítás megkezdése előtt ürítse ki a jármű utasterét és csomagtartóját.</li>
+            <li>A gépjárművön már meglévő, a tisztítás vagy polírozás során láthatóvá váló sérülésekért (karcok, kopások, festékhibák, szakadások) a Szolgáltató nem vállal felelősséget.</li>
+            <li>Az extrém szennyeződések (pl. beszáradt festék, vegyszer, több éves makacs foltok) 100%-os eltávolítására a Szolgáltató nem tud garanciát vállalni, de megtesz minden tőle telhetőt.</li>
+        </ul>
+
+        <h3 class="text-lg font-bold text-blue-400 mt-6 mb-2">5. Egyéb rendelkezések</h3>
+        <p>A Szolgáltató fenntartja a jogot a jelen ÁSZF egyoldalú módosítására. A vitás kérdéseket a felek elsősorban békés úton, megegyezéssel kísérlik meg rendezni.</p>
+    </div>
+
+    <div id="content-adatkezeles" class="hidden">
+        <p class="mb-4">Gáspár Marcell e.v. (Mobil Wash Autókozmetika) számára kiemelten fontos ügyfelei személyes adatainak védelme. Jelen tájékoztató célja, hogy bemutassa az adatok kezelésének módját az Általános Adatvédelmi Rendeletnek (GDPR) megfelelően.</p>
+
+        <h3 class="text-lg font-bold text-blue-400 mt-6 mb-2">1. Az Adatkezelő adatai</h3>
+        <p>Név: Gáspár Marcell e.v.<br>Székhely: 9761 Táplánszentkereszt, Fő út 46.<br>E-mail: mobilwashautokozmetika@gmail.com<br>Telefon: +36 20 229 5966</p>
+
+        <h3 class="text-lg font-bold text-blue-400 mt-6 mb-2">2. A kezelt adatok köre és a cél</h3>
+        <p class="mb-2">A Szolgáltató a következő személyes adatokat kezeli:</p>
+        <ul class="list-disc pl-5 mb-4 space-y-1">
+            <li><strong>Név és Telefonszám:</strong> A kapcsolattartás, időpont-egyeztetés és a szolgáltatás teljesítése céljából.</li>
+            <li><strong>Lakcím / Kiszállási cím:</strong> A mobil autómosás helyszínének megközelítése céljából.</li>
+            <li><strong>Gépjármű rendszáma, típusa:</strong> A gépjármű beazonosítása és a megfelelő szolgáltatási csomag kiválasztása céljából.</li>
+            <li><strong>Számlázási adatok:</strong> A törvényi számviteli kötelezettségek teljesítése céljából.</li>
+        </ul>
+
+        <h3 class="text-lg font-bold text-blue-400 mt-6 mb-2">3. Az adatkezelés jogalapja és időtartama</h3>
+        <p class="mb-4">Az adatkezelés jogalapja a felek közötti szerződés (szolgáltatás megrendelése) teljesítése, valamint a Szolgáltatóra vonatkozó jogi kötelezettség (számlázás). A kapcsolattartási adatokat a szolgáltatás teljesítéséig, illetve az esetleges garanciális igények lezárultáig kezeljük. A kiállított számlákat és a rajtuk szereplő adatokat a Számviteli törvény értelmében 8 évig kötelező megőrizni.</p>
+
+        <h3 class="text-lg font-bold text-blue-400 mt-6 mb-2">4. Az érintettek jogai</h3>
+        <p>Az ügyfél jogosult tájékoztatást kérni a kezelt adatairól, kérheti azok helyesbítését, vagy – a kötelezően fizetendő számlák adatainak kivételével – azok törlését az Adatkezelő elérhetőségein. Panasz esetén a Nemzeti Adatvédelmi és Információszabadság Hatósághoz (NAIH) fordulhat.</p>
+    </div>
+
+    <div id="imageModal" class="fixed inset-0 z-[60] hidden bg-black/95 flex items-center justify-center p-4 transition-opacity" onclick="closeImageModal()">
         <span class="absolute top-6 right-8 text-white text-4xl cursor-pointer hover:text-gray-300 transition">&times;</span>
         <img id="modalImage" src="" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl">
     </div>
 
+    <div id="textModal" class="fixed inset-0 z-[70] hidden bg-black/95 flex items-center justify-center p-4 md:p-10 transition-opacity" onclick="closeTextModal(event)">
+        <div class="relative w-full max-w-4xl bg-gray-900 border border-gray-700 rounded-2xl shadow-2xl flex flex-col max-h-[90vh]" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center p-6 border-b border-gray-800">
+                <h2 id="textModalTitle" class="text-2xl font-bold text-white">Cím</h2>
+                <button onclick="closeTextModal(event)" class="text-gray-400 hover:text-white text-4xl focus:outline-none leading-none">&times;</button>
+            </div>
+            <div id="textModalContent" class="modal-scroll p-6 md:p-8 overflow-y-auto text-gray-300 space-y-2 text-justify">
+                </div>
+        </div>
+    </div>
+
     <script>
-        // Képnézegető
-        function openModal(imageSrc) {
+        // Képnézegető megnyitása / bezárása
+        function openImageModal(imageSrc) {
             document.getElementById('modalImage').src = imageSrc;
             document.getElementById('imageModal').classList.remove('hidden');
         }
-        function closeModal() {
+        function closeImageModal() {
             document.getElementById('imageModal').classList.add('hidden');
+        }
+
+        // Szöveges felugró ablak megnyitása / bezárása
+        function openTextModal(title, contentId) {
+            document.getElementById('textModalTitle').innerText = title;
+            document.getElementById('textModalContent').innerHTML = document.getElementById(contentId).innerHTML;
+            document.getElementById('textModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Ne lehessen a hátteret görgetni
+        }
+        function closeTextModal(event) {
+            document.getElementById('textModal').classList.add('hidden');
+            document.body.style.overflow = ''; // Görgetés visszaállítása
         }
 
         // Mobil Menü (Szendvicsmenü)
@@ -338,7 +428,6 @@
         const mobileLinks = mobileMenu.querySelectorAll('a');
         const icon = mobileBtn.querySelector('i');
 
-        // Menü megnyitása / bezárása
         mobileBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
             if(mobileMenu.classList.contains('hidden')) {
@@ -350,7 +439,6 @@
             }
         });
 
-        // Ha rákattintanak egy linkre, záródjon be a menü automatikusan
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
