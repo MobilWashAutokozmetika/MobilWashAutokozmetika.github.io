@@ -148,11 +148,11 @@
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 tracking-wide">Áraink és Csomagjaink</h2>
         
         <div class="grid md:grid-cols-2 gap-10">
-            <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
+            <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700 flex flex-col">
                 <div class="bg-blue-600 py-4 text-center">
                     <h3 class="text-2xl font-bold text-white"><i class="fas fa-car-interior mr-2"></i> Belső Tisztítás</h3>
                 </div>
-                <div class="p-6">
+                <div class="p-6 flex-grow">
                     <div class="mb-6 border-b border-gray-700 pb-6">
                         <h4 class="text-xl font-semibold text-blue-400 mb-3">Prémium Csomag</h4>
                         <ul class="text-sm text-gray-300 mb-6 space-y-2">
@@ -185,11 +185,11 @@
                 </div>
             </div>
 
-            <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
+            <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700 flex flex-col">
                 <div class="bg-blue-600 py-4 text-center">
-                    <h3 class="text-2xl font-bold text-white"><i class="fas fa-car mr-2"></i> Külső / Nanotechnológiás Mosás</h3>
+                    <h3 class="text-2xl font-bold text-white">Külső / Nanotechnológiás Mosás</h3>
                 </div>
-                <div class="p-6">
+                <div class="p-6 flex-grow">
                     <div class="mb-6 border-b border-gray-700 pb-6">
                         <h4 class="text-xl font-semibold text-blue-400 mb-3">Prémium Csomag</h4>
                         <ul class="text-sm text-gray-300 mb-6 space-y-2">
@@ -225,8 +225,51 @@
                     </div>
                 </div>
             </div>
+
+            <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700 md:col-span-2 mt-4">
+                <div class="bg-blue-600 py-4 text-center">
+                    <h3 class="text-2xl font-bold text-white"><i class="fas fa-star mr-2"></i> Extrák & Fényszóró Felújítás</h3>
+                </div>
+                <div class="p-6 md:p-8 grid md:grid-cols-2 gap-10">
+                    
+                    <div class="border-b md:border-b-0 md:border-r border-gray-700 pb-8 md:pb-0 md:pr-8">
+                        <h4 class="text-2xl font-semibold text-blue-400 mb-4">Fényszóró Felújítás</h4>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            A bemattult, besárgult fényszórók felújítását többlépcsős csiszolással végzem, majd egy speciális gőzöléses technikával fejezem be. Ez az eljárás gyári minőségű fényt és <strong>akár 2 év tartósságot</strong> biztosít a fényszóróknak.
+                        </p>
+                        <div class="bg-gray-900 rounded-lg p-4 flex justify-between items-center border border-gray-700">
+                            <span class="text-lg text-gray-300"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i> Ár:</span>
+                            <span class="text-xl font-bold text-white">7 000 Ft / db</span>
+                        </div>
+                    </div>
+
+                    <div class="md:pl-2">
+                        <h4 class="text-2xl font-semibold text-blue-400 mb-6">Extra Szolgáltatások</h4>
+                        <ul class="space-y-4">
+                            <li class="flex justify-between items-center border-b border-gray-700 pb-3">
+                                <span class="text-gray-300"><i class="fas fa-paw text-blue-500 w-6"></i> Állatszőr eltávolítása (utastér)</span>
+                                <span class="font-bold text-white whitespace-nowrap">+ 4 000 Ft</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-gray-700 pb-3">
+                                <span class="text-gray-300"><i class="fas fa-paw text-blue-500 w-6"></i> Állatszőr eltávolítása (csomagtartó)</span>
+                                <span class="font-bold text-white whitespace-nowrap">+ 3 000 Ft</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-gray-700 pb-3">
+                                <span class="text-gray-300"><i class="fas fa-truck-pickup text-blue-500 w-6"></i> Pick-up vagy 7 személyes autó</span>
+                                <span class="font-bold text-white whitespace-nowrap">+ 4 000 Ft</span>
+                            </li>
+                            <li class="flex justify-between items-center pt-1">
+                                <span class="text-gray-300"><i class="fas fa-biohazard text-blue-500 w-6"></i> Extrém szennyezett autó</span>
+                                <span class="font-bold text-white whitespace-nowrap">+ 4 000 Ft</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+
         </div>
-        <p class="text-center text-gray-400 mt-8 text-sm">Az árak tájékoztató jellegűek, a pontos összeg a gépjármű szennyezettségétől függően változhat.</p>
+        <p class="text-center text-gray-400 mt-10 text-sm">Az árak tájékoztató jellegűek, a pontos összeg a gépjármű szennyezettségétől függően változhat.</p>
     </section>
 
     <footer class="bg-black py-8 text-center text-gray-500 border-t border-gray-800">
