@@ -35,8 +35,36 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.9));
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), rgba(2, 6, 23, 0.8));
             z-index: 1;
+        }
+
+        /* UJ: Egyedi 3D-s Fehér Körvonalas Szöveg Hatás */
+        .text-3d-wash {
+            color: #3b82f6; /* Eredeti text-blue-500 kék szín */
+            font-weight: 900; /* Extra vastag a jobb hatásért */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            
+            /* Többrétegű text-shadow: outline + 3D depth */
+            text-shadow:
+                /* Fehér Körvonal Rétegek */
+                -1px -1px 0 #fff,
+                 1px -1px 0 #fff,
+                -1px  1px 0 #fff,
+                 1px  1px 0 #fff,
+                
+                /* 3D Mélység Rétegek (Kék és sötétített árnyékok) */
+                2px  2px 0 #fff,
+                3px  3px 0 #fff,
+                4px  4px 0 rgba(0,0,0,0.5),
+                5px  5px 5px rgba(0,0,0,0.8);
+                
+            /* Opcionális: Finom színátmenet a betűkön a még 3D-sebb hatásért */
+            background: linear-gradient(180deg, #60a5fa 0%, #2563eb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; /* A background gradient érvényesül */
+            background-clip: text;
         }
     </style>
 </head>
@@ -53,8 +81,8 @@
         </div>
 
         <div class="max-w-4xl mx-auto relative z-10">
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4">
-                <span class="text-blue-500">Mobil Wash</span> Autókozmetika
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4 text-3d-wash">
+                Mobil Wash
             </h1>
             <p class="text-xl md:text-2xl text-gray-300 mb-10">Prémium autótisztítás és fényszóró felújítás. Te pihensz, mi házhoz megyünk!</p>
             <a href="tel:+36202295966" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold text-lg py-4 px-10 rounded-full transition duration-300 shadow-[0_0_15px_rgba(59,130,246,0.5)] transform hover:scale-105">
