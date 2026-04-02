@@ -7,57 +7,49 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Buborék Animáció CSS */
-        .bubble-bg {
+        /* Biztosítja, hogy a videó kitöltse a fejlécet és ne lógjon ki */
+        .header-video-container {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 0;
-            background: linear-gradient(to bottom, #0f172a, #020617);
             overflow: hidden;
+            z-index: 0;
         }
-        .bubble {
+        .header-video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
             position: absolute;
-            bottom: -100px;
-            background-color: rgba(59, 130, 246, 0.15); /* Halvány kék buborékok */
-            border-radius: 50%;
-            animation: floatUp infinite ease-in;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover; /* Kitölti a területet torzítás nélkül */
         }
-        @keyframes floatUp {
-            0% { transform: translateY(0) scale(1); opacity: 0; }
-            20% { opacity: 1; }
-            100% { transform: translateY(-1000px) scale(1.5); opacity: 0; }
+        /* Sötét réteg a videó felett a szöveg olvashatóságáért */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.9));
+            z-index: 1;
         }
-        /* Buborékok mérete, helyzete és sebessége */
-        .bubble:nth-child(1) { width: 40px; height: 40px; left: 10%; animation-duration: 8s; animation-delay: 0s; }
-        .bubble:nth-child(2) { width: 80px; height: 80px; left: 20%; animation-duration: 11s; animation-delay: 2s; }
-        .bubble:nth-child(3) { width: 30px; height: 30px; left: 35%; animation-duration: 7s; animation-delay: 4s; }
-        .bubble:nth-child(4) { width: 60px; height: 60px; left: 50%; animation-duration: 12s; animation-delay: 1s; }
-        .bubble:nth-child(5) { width: 25px; height: 25px; left: 65%; animation-duration: 6s; animation-delay: 3s; }
-        .bubble:nth-child(6) { width: 90px; height: 90px; left: 80%; animation-duration: 14s; animation-delay: 0s; }
-        .bubble:nth-child(7) { width: 50px; height: 50px; left: 90%; animation-duration: 9s; animation-delay: 5s; }
-        .bubble:nth-child(8) { width: 20px; height: 20px; left: 5%; animation-duration: 10s; animation-delay: 1s; }
-        .bubble:nth-child(9) { width: 70px; height: 70px; left: 75%; animation-duration: 13s; animation-delay: 4s; }
-        .bubble:nth-child(10) { width: 45px; height: 45px; left: 45%; animation-duration: 8s; animation-delay: 2s; }
     </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
     
     <header class="relative py-24 px-6 text-center shadow-2xl border-b border-gray-800 overflow-hidden">
         
-        <div class="bubble-bg">
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
+        <div class="header-video-container">
+            <video autoplay loop muted playsinline class="header-video">
+                <source src="buborekok.mp4" type="video/mp4">
+                A böngésződ nem támogatja a videó háttért.
+            </video>
+            <div class="video-overlay"></div>
         </div>
 
         <div class="max-w-4xl mx-auto relative z-10">
@@ -187,182 +179,6 @@
         <p class="mb-2"><strong>Mobil Wash Autókozmetika</strong></p>
         <p>© 2024 Minden jog fenntartva.</p>
     </footer>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobil Wash Autókozmetika</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-900 text-white font-sans">
-    
-    <header class="relative bg-black/60 py-24 px-6 text-center shadow-2xl border-b border-gray-800">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4">
-                <span class="text-blue-500">Mobil Wash</span> Autókozmetika
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-300 mb-10">Prémium autótisztítás és fényszóró felújítás. Te pihensz, mi házhoz megyünk!</p>
-            <a href="tel:+36202295966" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold text-lg py-4 px-10 rounded-full transition duration-300 shadow-[0_0_15px_rgba(59,130,246,0.5)] transform hover:scale-105">
-                <i class="fas fa-phone-alt mr-2"></i> +36 20 229 5966
-            </a>
-            <p class="mt-6 text-lg md:text-xl font-semibold text-gray-200 tracking-wide">
-                <i class="fas fa-map-marker-alt text-blue-500 text-xl mr-1"></i> Ingyenes kiszállás Szombathely 30 km-es körzetében
-            </p>
-        </div>
-    </header>
-
-    <section class="py-20 px-6 max-w-6xl mx-auto border-b border-gray-800">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 tracking-wide">Kiemelt Szolgáltatásaink</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700 hover:border-blue-500 transition duration-300 group">
-                <div class="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
-                    <i class="fas fa-home text-2xl text-blue-500"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Mobil Autótisztítás</h3>
-                <p class="text-gray-400 leading-relaxed">Nincs időd elhozni az autót? Kérésre házhoz megyünk, és otthonod kényelmében varázsoljuk újjá járművedet!</p>
-            </div>
-            <div class="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700 hover:border-blue-500 transition duration-300 group">
-                <div class="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
-                    <i class="fas fa-spray-can text-2xl text-blue-500"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Prémium Belső Tisztítás</h3>
-                <p class="text-gray-400 leading-relaxed">Alapos porszívózás, mélyreható kárpittisztítás, bőrápolás, valamint makacs foltok és kutyaszőr nyomtalan eltávolítása.</p>
-            </div>
-            <div class="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700 hover:border-blue-500 transition duration-300 group">
-                <div class="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
-                    <i class="fas fa-lightbulb text-2xl text-blue-500"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Fényszóró Felújítás</h3>
-                <p class="text-gray-400 leading-relaxed">Bemattult, besárgult fényszórók professzionális felújítása, hogy az autód újra szép legyen és biztonságosan láss a sötétben.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 px-6 max-w-7xl mx-auto border-b border-gray-800">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 tracking-wide">Munkáink - Előtte és Utána</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64"><img src="kep1.jpg" onerror="this.onerror=null; this.src='kep1.png';" alt="Peugeot prémium külső mosás szemből" onclick="openModal(this.src)" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500"></div>
-            <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64"><img src="kep2.jpg" onerror="this.onerror=null; this.src='kep2.png';" alt="Fényszóró felújítás szürke autón" onclick="openModal(this.src)" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500"></div>
-            <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64"><img src="kep3.jpg" onerror="this.onerror=null; this.src='kep3.png';" alt="Bőrülés tisztítás és ápolás" onclick="openModal(this.src)" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500"></div>
-            <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64"><img src="kep4.jpg" onerror="this.onerror=null; this.src='kep4.png';" alt="Bőr és szövet hátsó ülések tisztítása" onclick="openModal(this.src)" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500"></div>
-            <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64"><img src="kep5.jpg" onerror="this.onerror=null; this.src='kep5.png';" alt="Mercedes G osztály prémium belső kozmetika" onclick="openModal(this.src)" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500"></div>
-            <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64"><img src="kep6.jpg" onerror="this.onerror=null; this.src='kep6.png';" alt="Audi kárpittisztítás és kutyaszőr eltávolítás" onclick="openModal(this.src)" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500"></div>
-            <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64"><img src="kep7.jpg" onerror="this.onerror=null; this.src='kep7.png';" alt="Szövet autóülés mélytisztítása" onclick="openModal(this.src)" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500"></div>
-            <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64"><img src="kep8.jpg" onerror="this.onerror=null; this.src='kep8.png';" alt="Kia bogároldás és teljes külső mosás" onclick="openModal(this.src)" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500"></div>
-            <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64"><img src="kep9.jpg" onerror="this.onerror=null; this.src='kep9.png';" alt="Bemattult fényszóró felújítása kék autón" onclick="openModal(this.src)" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500"></div>
-            <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64"><img src="kep10.jpg" onerror="this.onerror=null; this.src='kep10.png';" alt="Peugeot prémium belső tisztítás elöl" onclick="openModal(this.src)" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500"></div>
-            <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64"><img src="kep11.jpg" onerror="this.onerror=null; this.src='kep11.png';" alt="Mobil Wash Autókozmetika munkája" onclick="openModal(this.src)" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500"></div>
-            <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64"><img src="kep12.jpg" onerror="this.onerror=null; this.src='kep12.png';" alt="Mobil Wash Autókozmetika munkája" onclick="openModal(this.src)" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500"></div>
-        </div>
-    </section>
-
-    <section class="py-20 px-6 max-w-6xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 tracking-wide">Áraink és Csomagjaink</h2>
-        
-        <div class="grid md:grid-cols-2 gap-10">
-            <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
-                <div class="bg-blue-600 py-4 text-center">
-                    <h3 class="text-2xl font-bold text-white"><i class="fas fa-car-interior mr-2"></i> Belső Tisztítás</h3>
-                </div>
-                <div class="p-6">
-                    <div class="mb-6 border-b border-gray-700 pb-6">
-                        <h4 class="text-xl font-semibold text-blue-400 mb-2">Prémium Csomag</h4>
-                        <p class="text-sm text-gray-400 mb-4">Alapos porszívózás, vegyszeres szőnyeg/ablak/műszerfal tisztítás, műanyag ápolás, pedálok tisztítása.</p>
-                        <div class="flex justify-between items-center text-lg">
-                            <span>Kisautó:</span> <span class="font-bold">12 500 Ft</span>
-                        </div>
-                        <div class="flex justify-between items-center text-lg">
-                            <span>Nagyautó:</span> <span class="font-bold">15 500 Ft</span>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold text-blue-400 mb-2">Prémium+ Csomag</h4>
-                        <p class="text-sm text-gray-400 mb-4">A Prémium csomag tartalma, kiegészítve mélyreható üléskárpit tisztítással vagy bőrülések tisztításával és ápolásával.</p>
-                        <div class="flex justify-between items-center text-lg">
-                            <span>Kisautó:</span> <span class="font-bold">23 500 Ft</span>
-                        </div>
-                        <div class="flex justify-between items-center text-lg">
-                            <span>Nagyautó:</span> <span class="font-bold">27 000 Ft</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
-                <div class="bg-blue-600 py-4 text-center">
-                    <h3 class="text-2xl font-bold text-white"><i class="fas fa-car mr-2"></i> Külső / Nanotechnológiás Mosás</h3>
-                </div>
-                <div class="p-6">
-                    <div class="mb-6 border-b border-gray-700 pb-6">
-                        <h4 class="text-xl font-semibold text-blue-400 mb-2">Prémium Csomag</h4>
-                        <p class="text-sm text-gray-400 mb-4">Felnitisztítás, kerékjáratok és falcok tisztítása, előmosás, kézi/nanós mosás, ablakok tisztítása, szárítás.</p>
-                        <div class="flex justify-between items-center text-lg">
-                            <span>Kisautó:</span> <span class="font-bold">9 500 Ft</span>
-                        </div>
-                        <div class="flex justify-between items-center text-lg">
-                            <span>Nagyautó:</span> <span class="font-bold">11 000 Ft</span>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold text-blue-400 mb-2">Prémium+ Csomag</h4>
-                        <p class="text-sm text-gray-400 mb-4">A Prémium csomag tartalma + bogároldás, gumi/műanyag ápolás, kátrány/szállórozsda eltávolítás, felni és karosszéria védelem (hidrofób hatás).</p>
-                        <div class="flex justify-between items-center text-lg">
-                            <span>Kisautó:</span> <span class="font-bold">15 500 Ft</span>
-                        </div>
-                        <div class="flex justify-between items-center text-lg">
-                            <span>Nagyautó:</span> <span class="font-bold">17 500 Ft</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <p class="text-center text-gray-400 mt-8 text-sm">Az árak tájékoztató jellegűek, a pontos összeg a gépjármű szennyezettségétől függően változhat.</p>
-    </section>
-
-    <footer class="bg-black py-8 text-center text-gray-500">
-        <p class="mb-2"><strong>Mobil Wash Autókozmetika</strong></p>
-        <p>© 2024 Minden jog fenntartva.</p>
-    </footer>
-
-    <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black/95 flex items-center justify-center p-4 cursor-pointer transition-opacity duration-300 opacity-0" onclick="closeModal()">
-        <span class="absolute top-5 right-8 text-white text-5xl font-bold cursor-pointer hover:text-gray-400">&times;</span>
-        <img id="modalImage" src="" alt="Nagyított kép" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl transition-transform duration-300 transform scale-95" onclick="event.stopPropagation()">
-    </div>
-
-    <script>
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImage');
-
-        function openModal(imgSrc) {
-            modalImg.src = imgSrc; // Kép forrásának megadása
-            modal.classList.remove('hidden'); // Doboz láthatóvá tétele
-            document.body.style.overflow = 'hidden'; // Ne lehessen görgetni a hátteret
-            
-            // Pici animáció
-            setTimeout(() => {
-                modal.classList.remove('opacity-0');
-                modalImg.classList.remove('scale-95');
-                modalImg.classList.add('scale-100');
-            }, 10);
-        }
-
-        function closeModal() {
-            modal.classList.add('opacity-0'); // Halványítás
-            modalImg.classList.remove('scale-100');
-            modalImg.classList.add('scale-95'); // Kicsinyítés
-
-            // Várjuk meg az animáció végét, aztán rejtsük el
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                document.body.style.overflow = 'auto'; // Görgetés visszaállítása
-            }, 300);
-        }
-    </script>
 
 </body>
 </html>
