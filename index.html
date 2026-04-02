@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="hu" class="scroll-smooth scroll-pt-20">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,9 +41,32 @@
     </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
+
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-extrabold text-white tracking-wide">
+                <span class="text-blue-500">Mobil</span> Wash
+            </a>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#szolgaltatasok" class="text-gray-300 hover:text-blue-400 font-medium transition">Szolgáltatások</a>
+                <a href="#munkaink" class="text-gray-300 hover:text-blue-400 font-medium transition">Munkáink</a>
+                <a href="#arak" class="text-gray-300 hover:text-blue-400 font-medium transition">Árak és Csomagok</a>
+            </div>
+
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-white text-3xl focus:outline-none transition">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-b border-gray-800 shadow-xl">
+            <a href="#szolgaltatasok" class="block py-4 px-6 text-gray-300 hover:bg-gray-800 hover:text-blue-400 font-medium border-b border-gray-800">Kiemelt Szolgáltatásaink</a>
+            <a href="#munkaink" class="block py-4 px-6 text-gray-300 hover:bg-gray-800 hover:text-blue-400 font-medium border-b border-gray-800">Munkáink</a>
+            <a href="#arak" class="block py-4 px-6 text-gray-300 hover:bg-gray-800 hover:text-blue-400 font-medium">Áraink és Csomagjaink</a>
+        </div>
+    </nav>
     
-    <header class="relative py-24 px-6 text-center shadow-2xl border-b border-gray-800 overflow-hidden">
-        
+    <header class="relative pt-32 pb-24 px-6 text-center shadow-2xl border-b border-gray-800 overflow-hidden">
         <div class="header-video-container">
             <video autoplay muted playsinline class="header-video">
                 <source src="buborekok.mp4" type="video/mp4">
@@ -52,7 +75,7 @@
             <div class="video-overlay"></div>
         </div>
 
-        <div class="max-w-4xl mx-auto relative z-10">
+        <div class="max-w-4xl mx-auto relative z-10 mt-8">
             <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4">
                 <span class="text-blue-500">Mobil Wash</span> Autókozmetika
             </h1>
@@ -73,7 +96,7 @@
         </div>
     </header>
 
-    <section class="py-20 px-6 max-w-6xl mx-auto border-b border-gray-800">
+    <section id="szolgaltatasok" class="py-20 px-6 max-w-6xl mx-auto border-b border-gray-800">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 tracking-wide">Kiemelt Szolgáltatásaink</h2>
         <div class="grid md:grid-cols-3 gap-8">
             <div class="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700 hover:border-blue-500 transition duration-300 group">
@@ -100,7 +123,7 @@
         </div>
     </section>
 
-    <section class="py-20 px-6 max-w-7xl mx-auto border-b border-gray-800">
+    <section id="munkaink" class="py-20 px-6 max-w-7xl mx-auto border-b border-gray-800">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 tracking-wide">Munkáink - Előtte és Utána</h2>
         <p class="text-center text-gray-400 mb-10">Kattints a képekre a kinagyításhoz!</p>
         
@@ -144,7 +167,7 @@
         </div>
     </section>
 
-    <section class="py-20 px-6 max-w-6xl mx-auto">
+    <section id="arak" class="py-20 px-6 max-w-6xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 tracking-wide">Áraink és Csomagjaink</h2>
         
         <div class="grid md:grid-cols-2 gap-10">
@@ -291,12 +314,13 @@
         <p class="text-sm">© 2024 Minden jog fenntartva.</p>
     </footer>
 
-    <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black/95 flex items-center justify-center p-4 transition-opacity" onclick="closeModal()">
+    <div id="imageModal" class="fixed inset-0 z-[60] hidden bg-black/95 flex items-center justify-center p-4 transition-opacity" onclick="closeModal()">
         <span class="absolute top-6 right-8 text-white text-4xl cursor-pointer hover:text-gray-300 transition">&times;</span>
         <img id="modalImage" src="" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl">
     </div>
 
     <script>
+        // Képnézegető
         function openModal(imageSrc) {
             document.getElementById('modalImage').src = imageSrc;
             document.getElementById('imageModal').classList.remove('hidden');
@@ -304,6 +328,33 @@
         function closeModal() {
             document.getElementById('imageModal').classList.add('hidden');
         }
+
+        // Mobil Menü (Szendvicsmenü)
+        const mobileBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        const icon = mobileBtn.querySelector('i');
+
+        // Menü megnyitása / bezárása
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if(mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Ha rákattintanak egy linkre, záródjon be a menü automatikusan
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
     </script>
 
 </body>
