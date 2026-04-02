@@ -142,7 +142,7 @@
                 <img src="kep3.jpg" onerror="this.onerror=null; this.src='kep3.png';" onclick="openImageModal(this.src)" alt="Bőrülés tisztítás és ápolás" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
             </div>
             <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64">
-                <img src="kep4.jpg" onerror="this.onerror=null; this.src='kep4.png';" alt="Bőr és szövet hátsó ülések tisztítása" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                <img src="kep4.jpg" onerror="this.onerror=null; this.src='kep4.png';" onclick="openImageModal(this.src)" alt="Bőr és szövet hátsó ülések tisztítása" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
             </div>
             <div class="overflow-hidden rounded-xl shadow-lg border border-gray-700 group h-64">
                 <img src="kep5.jpg" onerror="this.onerror=null; this.src='kep5.png';" onclick="openImageModal(this.src)" alt="Mercedes G osztály prémium belső kozmetika" class="cursor-pointer w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
@@ -396,12 +396,12 @@
                 <button onclick="closeTextModal(event)" class="text-gray-400 hover:text-white text-4xl focus:outline-none leading-none">&times;</button>
             </div>
             <div id="textModalContent" class="modal-scroll p-6 md:p-8 overflow-y-auto text-gray-300 space-y-2 text-justify">
-                </div>
+            </div>
         </div>
     </div>
 
     <script>
-        // Képnézegető megnyitása / bezárása
+        // Képnézegető
         function openImageModal(imageSrc) {
             document.getElementById('modalImage').src = imageSrc;
             document.getElementById('imageModal').classList.remove('hidden');
@@ -410,19 +410,19 @@
             document.getElementById('imageModal').classList.add('hidden');
         }
 
-        // Szöveges felugró ablak megnyitása / bezárása
+        // Szöveges felugró ablak
         function openTextModal(title, contentId) {
             document.getElementById('textModalTitle').innerText = title;
             document.getElementById('textModalContent').innerHTML = document.getElementById(contentId).innerHTML;
             document.getElementById('textModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Ne lehessen a hátteret görgetni
+            document.body.style.overflow = 'hidden'; 
         }
         function closeTextModal(event) {
             document.getElementById('textModal').classList.add('hidden');
-            document.body.style.overflow = ''; // Görgetés visszaállítása
+            document.body.style.overflow = ''; 
         }
 
-        // Mobil Menü (Szendvicsmenü)
+        // Mobil Menü
         const mobileBtn = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = mobileMenu.querySelectorAll('a');
